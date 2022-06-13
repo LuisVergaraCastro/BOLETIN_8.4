@@ -21,6 +21,7 @@ SELECT * FROM SalesLT.Product
 SELECT DISTINCT Name, ProductNumber, (ListPrice - StandardCost) AS [MARGEN DEL PRODUCTO], ProductCategoryID FROM SalesLT.Product
 --6.ID de categoría y margen medio de los productos de esa categoría.
 --Ten l cuenta que el margen medio es la media de los márgenes.
+SELECT * FROM SalesLT.Product
 
 --7.Consulta cuantas direcciones diferentes tenemos de cada país
 
