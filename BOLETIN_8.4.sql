@@ -22,9 +22,11 @@ SELECT DISTINCT Name, ProductNumber, (ListPrice - StandardCost) AS [MARGEN DEL P
 --6.ID de categoría y margen medio de los productos de esa categoría.
 --Ten l cuenta que el margen medio es la media de los márgenes.
 SELECT * FROM SalesLT.Product
-
+SELECT ProductCategoryID, AVG(ListPrice - StandardCost) AS [MARGEN MEDIO DEL PRODUCTO]  FROM SalesLT.Product GROUP BY ProductCategoryID
 --7.Consulta cuantas direcciones diferentes tenemos de cada país
-
+SELECT * FROM SalesLT.Address
+SELECT CountryRegion, COUNT(*) AS [Nº DE DIRECCIONES] FROM SalesLT.Address GROUP BY CountryRegion
 --8.Consulta cuantas direcciones diferentes tenemos de cada país y estado
-
+SELECT CountryRegion, StateProvince, COUNT(*) AS [Nº DE DIRECCIONES] FROM SalesLT.Address GROUP BY CountryRegion, StateProvince
 --9.Consulta cuantas direcciones diferentes tenemos de cada país, estado y ciudad
+SELECT CountryRegion, StateProvince, City, COUNT(*) AS [Nº DE DIRECCIONES] FROM SalesLT.Address GROUP BY CountryRegion, StateProvince, City
